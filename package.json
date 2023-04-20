@@ -4,7 +4,9 @@
 	"description": "The source code is distributed under the MIT license. See LICENSE.md for more information.",
 	"main": "index.js",
 	"scripts": {
-		"test": "test"
+		"test": "test",
+		"dev": "nodemon app.js",
+		"start": "node app.js"
 	},
 	"repository": {
 		"type": "git",
