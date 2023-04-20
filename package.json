@@ -1,0 +1,27 @@
+{
+	"name": "human-centered-design-2223",
+	"version": "1.0.0",
+	"description": "The source code is distributed under the MIT license. See LICENSE.md for more information.",
+	"main": "index.js",
+	"scripts": {
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rvdegroen/human-centered-design-2223.git"
+	},
+	"author": "Roshnie de Groen",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rvdegroen/human-centered-design-2223/issues"
+	},
+	"homepage": "https://github.com/rvdegroen/human-centered-design-2223#readme",
+	"dependencies": {
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"socket.io": "^4.6.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
+}
