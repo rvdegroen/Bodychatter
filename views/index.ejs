@@ -8,11 +8,26 @@
 		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
+		<!-- chat -->
 		<ul id="messages"></ul>
 		<form id="form" action="">
 			<input id="input" autocomplete="off" />
 			<button>Send</button>
 		</form>
+
+		<form action="" id="avatar">
+			<!-- own character -->
+			<fieldset>
+				<legend>Name of the dish</legend>
+				<p class="subtext">Optional: Autodetect the name of your dish</p>
+				<input type="text" id="dishName" name="dishName" required />
+				<button id="autodetectFoodButton" class="hidden">Autodetect Dish</button>
+				<!-- this is NOT inline styling, determines the size of the screenshot-->
+				<video id="video" width="320" height="240" class="hidden" autoplay></video>
+				<canvas id="canvas" width="320" height="240" class="hidden"></canvas>
+			</fieldset>
+		</form>
+
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="./scripts/main.js"></script>
 	</body>
