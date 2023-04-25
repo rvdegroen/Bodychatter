@@ -24,31 +24,28 @@ socket.on("message", (msg) => {
 	window.scrollTo(0, document.body.scrollHeight);
 });
 
-// video for face
-
+// VIDEO
 // source: https://usefulangle.com/post/352/javascript-capture-image-from-camera
 // WEB API's cannot be used in server.js
-const autodetectFoodButton = document.getElementById("autodetectFoodButton");
-const dishNameInput = document.getElementById("dishName");
-
-// you can draw on canvas
-const canvas = document.getElementById("canvas");
-const video = document.getElementById("video");
+const $cameraButton = document.getElementById("camera");
+const $moodName = document.getElementById("mood__name");
+const $canvas = document.getElementById("canvas");
+const $video = document.getElementById("video");
 
 // if mediaDevices is supported, remove hidden class
 if (navigator.mediaDevices) {
-	autodetectFoodButton.classList.remove("hidden");
-	autodetectFoodButton.addEventListener("click", async (e) => {
+	$cameraButton.classList.remove("hidden");
+	$cameraButton.addEventListener("click", async (e) => {
 		// e.preventdefault because any button in a form will automatically submit the form, but that's not what i want to do.
 		e.preventDefault();
-		canvas.classList.add("hidden");
-		video.classList.remove("hidden");
+		$canvas.classList.add("hidden");
+		$video.classList.remove("hidden");
 		// permission to use media with only video | source: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices
 		const stream = await navigator.mediaDevices.getUserMedia({
 			video: true,
 			audio: false,
 		});
 		// assign the camera to video | source
-		video.srcObject = stream;
+		$video.srcObject = stream;
 	});
 } // code will execute after 1000 milliseconds (1 second)
