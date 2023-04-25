@@ -200,8 +200,9 @@ User Scenario:
 - Eric wants to be able to have better control of pressing the keyboard buttons, so that he can send messages when he's on the train and his phone moves too much.
 - solution: creating bigger buttons that are easier to press, while also being able to press on every single button
 
-- Eric wants to be in control of finding the right emoji in a chatroom, so that he can send an emoji's that translates the right feelings into his text messages.
+- Eric wants to be in control of finding the right expression in a chatroom, so that he can send an emoji's that translates the right feelings into his text messages.
 - solution: creating his own emoji's or avatars.
+- solution 2: video chatting or sending a pic of his face.
 
 - Eric wants to be control the application with keyboard only when he is using his computer, so that he doesn't needs to switch between mouse and keyboard, since it's less convenient for him.
 - Solution: make the application keyboard accesible.
