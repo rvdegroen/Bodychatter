@@ -25,16 +25,6 @@ socket.on("message", (msg) => {
 	messages.appendChild(item);
 	window.scrollTo(0, document.body.scrollHeight);
 });
-
-// var context = canvas.getContext("2d");
-// // pre-draw circle on canvas
-// context.beginPath();
-// context.arc(100, 100, 50, 0, 2 * Math.PI);
-// context.stroke();
-
-// context.fillStyle = "#FF0000";
-// context.fillRect(0, 0, 150, 75);
-
 // src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 // new position from mouse event
 const setPosition = (e) => {
