@@ -80,7 +80,9 @@ If Eric doesn't likes it that his face is being tracked and wants to choose the 
 
 4. He can create his own avatars to send in the chat, athough this might be too much effort for every message he would like to send.
 
-### Testing
+### Testing - Prioritise Identity
+
+Who is Eric? That's what I'll talk about here.
 
 #### My prototype - week 1
 
