@@ -29,12 +29,19 @@ socket.on("message", (msg) => {
 // new position from mouse or touch event
 const setPosition = (e) => {
 	if (e.type === "touchstart" || e.type === "touchmove") {
+		console.log("touchy");
 		pos.x = e.touches[0].clientX - canvas.offsetLeft;
 		pos.y = e.touches[0].clientY - canvas.offsetTop;
 	} else {
 		pos.x = e.offsetX;
 		pos.y = e.offsetY;
 	}
+};
+
+// new position from touch event
+const setTouchPosition = (e) => {
+	pos.x = e.touches[0].clientX - canvas.offsetLeft;
+	pos.y = e.touches[0].clientY - canvas.offsetTop;
 };
 
 // EVE
@@ -66,5 +73,5 @@ ctx.stroke();
 canvas.addEventListener("mousedown", setPosition);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseenter", setPosition);
-canvas.addEventListener("touchstart", setPosition);
+canvas.addEventListener("touchstart", setTouchPosition);
 canvas.addEventListener("touchmove", draw);
