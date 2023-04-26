@@ -38,8 +38,8 @@ socket.on("message", (msg) => {
 // src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 // new position from mouse event
 const setPosition = (e) => {
-	pos.x = e.clientX;
-	pos.y = e.clientY;
+	pos.x = e.offsetX;
+	pos.y = e.offsetY;
 };
 
 const draw = (e) => {
