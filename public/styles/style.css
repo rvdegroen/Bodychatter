@@ -4,8 +4,10 @@
 	margin: 0;
 }
 
-canvas {
-	background-color: blueviolet;
-	position: fixed;
-	top: 10vh;
+#draw__emoji {
+	background-color: red;
+	width: fit-content;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.369);
+	border-radius: 1em;
+	z-index: 1;
 }
