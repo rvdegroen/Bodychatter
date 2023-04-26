@@ -67,18 +67,24 @@ ctx.arc(100, 100, 75, 0, 2 * Math.PI);
 ctx.stroke();
 ctx.beginPath();
 
-// DOT EYES default
-ctx.arc(75, 80, 7, 0, 2 * Math.PI);
-ctx.arc(125, 80, 7, 0, 2 * Math.PI);
-ctx.fill();
+//DOT EYES DEFAULT: left right
+// ctx.beginPath();
+// ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+// ctx.lineWidth = 1;
+// ctx.stroke();
 
-// HORITZONTAL EYES
-// ctx.fillRect(60, 85, 25, 2);
-// ctx.fillRect(115, 85, 25, 2);
+// ctx.beginPath();
+// ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+// ctx.lineWidth = 1;
+// ctx.stroke();
+
+// HORITZONTAL EYES: left, right
+// ctx.fillRect(62, 85, 25, 2);
+// ctx.fillRect(113, 85, 25, 2);
 
 // VERTICAL EYES: left, right
-// ctx.fillRect(75, 70, 2, 30);
-// ctx.fillRect(120, 70, 2, 30);
+// ctx.fillRect(73, 70, 2, 30);
+// ctx.fillRect(124, 70, 2, 30);
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS
 canvas.addEventListener("mousedown", setPosition);
