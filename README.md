@@ -18,13 +18,7 @@ He's in an electric wheelchair and has a lack of fine motor skills.
 
 Eric is my tester and he is the one I'll be creating this application for. Eric wants to have an application in which he can communicates with body language in a chat. He has a motoric disability. He's in a wheelchair and has difficulties raising his arms and fine movements with his fingers. It was my duty to create an app for him according to his preferences and how he controls the application.
 
-This was the user scenario I based my app on:
-
-Eric is een ontwerper. Hij organiseert regelmatig design-avonden waar hij probeert om mensen met beperkingen samen te brengen met ontwerpers en makers. Eric zelf zit in een electrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. Hij heeft ooit met studenten van de minor Makers Lab gewerkt. Eric wilde zijn hele leven al gitaar spelen, maar zijn handen staan daar niet goed voor. Zijn team studenten heeft toen een werkend prototype gemaakt van een apparaat waarmee hij gitaar kan spelen.
-
-[USERSCENARIO]
-
-## Functionalities
+## Functionalities - Ignore conventions & add nonsense
 
 This is project's whishlist of its functionalities:
 
@@ -190,9 +184,9 @@ Things I would like to keep in mind:
 
 #### Interview analysis - week 2
 
-## User Scenario
+## User Scenario - Study Situation
 
-A user scenario gives us the context of the user. With the user scenario's you are able to identify different scenario's for the user in which they will use the app. This should give the designer information on how to design the app further. During different test sessions I have been able to identify different user scenario's for Eric:
+A user scenario gives us the context of the user. It basically studies the situation that the user could be in. With the user scenario's you are able to identify different scenario's for the user in which they will use the app. This should give the designer information on how to design the app further. During different test sessions I have been able to identify different user scenario's for Eric:
 
 User Scenario:
 
