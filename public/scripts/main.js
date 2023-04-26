@@ -28,28 +28,25 @@ socket.on("message", (msg) => {
 // src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 // new position from mouse or touch event
 const setPosition = (e) => {
-	if (e.type === "touchstart" || e.type === "touchmove") {
-		console.log("touchy");
-		pos.x = e.touches[0].clientX - canvas.offsetLeft;
-		pos.y = e.touches[0].clientY - canvas.offsetTop;
-	} else {
-		pos.x = e.offsetX;
-		pos.y = e.offsetY;
+	const rect = canvas.getBoundingClientRect();
+	if (e.type.startsWith("mouse")) {
+		pos.x = e.clientX - rect.left;
+		pos.y = e.clientY - rect.top;
+	} else if (e.type.startsWith("touch")) {
+		pos.x = e.touches[0].clientX - rect.left;
+		pos.y = e.touches[0].clientY - rect.top;
 	}
 };
 
-// new position from touch event
 const setTouchPosition = (e) => {
-	pos.x = e.touches[0].clientX - canvas.offsetLeft;
-	pos.y = e.touches[0].clientY - canvas.offsetTop;
+	e.preventDefault();
+	setPosition(e);
 };
 
-// EVE
-
 const draw = (e) => {
-	// mouse left button must be pressedm otherwise you draw without holding click
+	// mouse left button must be pressed, otherwise you draw without holding click
 	// 1 is the primary button (left mouse btn), 2 secondary, 3 primary + secondary
-	if (e.buttons !== 1) return;
+	if (e.buttons !== 1 && e.type.startsWith("mouse")) return;
 
 	ctx.beginPath(); // begin
 
