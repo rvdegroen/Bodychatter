@@ -61,18 +61,24 @@ const draw = (e) => {
 	ctx.stroke(); // draw it!
 };
 
-// pre-draw circle on canvas
+// HEAD CIRCLE PRE-DRAWN
 ctx.beginPath();
 ctx.arc(100, 100, 75, 0, 2 * Math.PI);
 ctx.stroke();
-// pre-draw
 ctx.beginPath();
-// x, y, circle, half circle
-ctx.arc(75, 80, 5, 0, 2 * Math.PI); // first dot
+
+// DOT EYES default
+ctx.arc(75, 80, 7, 0, 2 * Math.PI);
+ctx.arc(125, 80, 7, 0, 2 * Math.PI);
 ctx.fill();
-ctx.beginPath();
-ctx.arc(130, 80, 5, 0, 2 * Math.PI); // second dot
-ctx.fill();
+
+// HORITZONTAL EYES
+// ctx.fillRect(60, 85, 25, 2);
+// ctx.fillRect(115, 85, 25, 2);
+
+// VERTICAL EYES: left, right
+// ctx.fillRect(75, 70, 2, 30);
+// ctx.fillRect(120, 70, 2, 30);
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS
 canvas.addEventListener("mousedown", setPosition);
