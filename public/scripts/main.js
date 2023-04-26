@@ -52,7 +52,7 @@ const draw = (e) => {
 
 // pre-draw circle on canvas
 ctx.beginPath();
-ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+ctx.arc(100, 100, 75, 0, 2 * Math.PI);
 ctx.stroke();
 
 // EVENT LISTENERS
