@@ -65,6 +65,14 @@ const draw = (e) => {
 ctx.beginPath();
 ctx.arc(100, 100, 75, 0, 2 * Math.PI);
 ctx.stroke();
+// pre-draw
+ctx.beginPath();
+// x, y, circle, half circle
+ctx.arc(75, 80, 5, 0, 2 * Math.PI); // first dot
+ctx.fill();
+ctx.beginPath();
+ctx.arc(130, 80, 5, 0, 2 * Math.PI); // second dot
+ctx.fill();
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS
 canvas.addEventListener("mousedown", setPosition);
