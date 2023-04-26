@@ -39,9 +39,9 @@ const draw = (e) => {
 
 	ctx.beginPath(); // begin
 
-	ctx.lineWidth = 5;
+	ctx.lineWidth = 2;
 	ctx.lineCap = "round";
-	ctx.strokeStyle = "#c0392b";
+	ctx.strokeStyle = "#000000";
 
 	ctx.moveTo(pos.x, pos.y); // from
 	setPosition(e);
