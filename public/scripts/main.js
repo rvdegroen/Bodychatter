@@ -26,11 +26,18 @@ socket.on("message", (msg) => {
 	window.scrollTo(0, document.body.scrollHeight);
 });
 // src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
-// new position from mouse event
+// new position from mouse or touch event
 const setPosition = (e) => {
-	pos.x = e.offsetX;
-	pos.y = e.offsetY;
+	if (e.type === "touchstart" || e.type === "touchmove") {
+		pos.x = e.touches[0].clientX - canvas.offsetLeft;
+		pos.y = e.touches[0].clientY - canvas.offsetTop;
+	} else {
+		pos.x = e.offsetX;
+		pos.y = e.offsetY;
+	}
 };
+
+// EVE
 
 const draw = (e) => {
 	// mouse left button must be pressedm otherwise you draw without holding click
@@ -55,7 +62,9 @@ ctx.beginPath();
 ctx.arc(100, 100, 75, 0, 2 * Math.PI);
 ctx.stroke();
 
-// EVENT LISTENERS
-document.addEventListener("mousemove", draw);
-document.addEventListener("mousedown", setPosition);
-document.addEventListener("mouseenter", setPosition);
+// EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS
+canvas.addEventListener("mousedown", setPosition);
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseenter", setPosition);
+canvas.addEventListener("touchstart", setPosition);
+canvas.addEventListener("touchmove", draw);
