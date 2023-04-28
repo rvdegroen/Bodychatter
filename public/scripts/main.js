@@ -68,15 +68,15 @@ ctx.stroke();
 ctx.beginPath();
 
 //DOT EYES DEFAULT: left right
-// ctx.beginPath();
-// ctx.arc(74, 86, 7, 0, 2 * Math.PI);
-// ctx.lineWidth = 1;
-// ctx.stroke();
+ctx.beginPath();
+ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+ctx.lineWidth = 1;
+ctx.stroke();
 
-// ctx.beginPath();
-// ctx.arc(125, 85, 7, 0, 2 * Math.PI);
-// ctx.lineWidth = 1;
-// ctx.stroke();
+ctx.beginPath();
+ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+ctx.lineWidth = 1;
+ctx.stroke();
 
 // HORITZONTAL EYES: left, right
 // ctx.fillRect(62, 85, 25, 2);
