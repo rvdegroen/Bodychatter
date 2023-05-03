@@ -1,4 +1,4 @@
-// VARIABLES
+// VARIABLES----------------------
 // when it runs, it console.logs that the user connected from the server
 const socket = io();
 const messages = document.getElementById("messages");
@@ -6,25 +6,12 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 // last known position for canvas
 const pos = { x: 0, y: 0 };
+// buttons for eyes
+const dotEyesButton = document.getElementById("dot__eyes__button");
+const stripeEyesButton = document.getElementById("stripe__eyes__button");
+const horizontalEyesButton = document.getElementById("horizontal__eyes__button");
 
-// chat send button
-form.addEventListener("submit", (e) => {
-	// prevents the form from refreshing the page everytime you send a message
-	e.preventDefault();
-	if (input.value) {
-		// server emits the message to multiple clients
-		socket.emit("message", input.value);
-		input.value = "";
-	}
-});
-
-// server chat
-socket.on("message", (msg) => {
-	const item = document.createElement("li");
-	item.textContent = msg;
-	messages.appendChild(item);
-	window.scrollTo(0, document.body.scrollHeight);
-});
+// FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 // new position from mouse or touch event
 const setPosition = (e) => {
@@ -61,32 +48,65 @@ const draw = (e) => {
 	ctx.stroke(); // draw it!
 };
 
-// HEAD CIRCLE PRE-DRAWN
-ctx.beginPath();
-ctx.arc(100, 100, 75, 0, 2 * Math.PI);
-ctx.stroke();
-ctx.beginPath();
+// TO CHAT----------------------
+form.addEventListener("submit", (e) => {
+	// prevents the form from refreshing the page everytime you send a message
+	e.preventDefault();
+	if (input.value) {
+		// server emits the message to multiple clients
+		socket.emit("message", input.value);
+		input.value = "";
+	}
+});
+socket.on("message", (msg) => {
+	const item = document.createElement("li");
+	item.textContent = msg;
+	messages.appendChild(item);
+	window.scrollTo(0, document.body.scrollHeight);
+});
 
-//DOT EYES DEFAULT: left right
-ctx.beginPath();
-ctx.arc(74, 86, 7, 0, 2 * Math.PI);
-ctx.lineWidth = 1;
-ctx.stroke();
+// EVENT LISTENERS FOR CLICKING ON RADIO BUTTON----------------------
+dotEyesButton.addEventListener("click", function () {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.beginPath();
+	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	//DOT EYES DEFAULT: left right
+	ctx.beginPath();
+	ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+	ctx.lineWidth = 1;
+	ctx.stroke();
 
-ctx.beginPath();
-ctx.arc(125, 85, 7, 0, 2 * Math.PI);
-ctx.lineWidth = 1;
-ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+});
 
-// HORITZONTAL EYES: left, right
-// ctx.fillRect(62, 85, 25, 2);
-// ctx.fillRect(113, 85, 25, 2);
+horizontalEyesButton.addEventListener("click", function () {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.beginPath();
+	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	// HORITZONTAL EYES: left, right
+	ctx.fillRect(62, 85, 25, 2);
+	ctx.fillRect(113, 85, 25, 2);
+});
 
-// VERTICAL EYES: left, right
-// ctx.fillRect(73, 70, 2, 30);
-// ctx.fillRect(124, 70, 2, 30);
+stripeEyesButton.addEventListener("click", function () {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.beginPath();
+	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	// STRIPE EYES: left, right
+	ctx.fillRect(73, 70, 2, 30);
+	ctx.fillRect(124, 70, 2, 30);
+});
 
-// EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS
+// EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
 canvas.addEventListener("mousedown", setPosition);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseenter", setPosition);
