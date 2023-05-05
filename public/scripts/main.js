@@ -59,6 +59,7 @@ form.addEventListener("submit", (e) => {
 		input.value = "";
 	}
 });
+
 socket.on("message", (msg) => {
 	const item = document.createElement("li");
 	item.textContent = msg;
