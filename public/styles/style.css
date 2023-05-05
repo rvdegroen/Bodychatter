@@ -13,6 +13,11 @@
 	padding: 1em;
 }
 
+.chatbar {
+	display: flex;
+}
+
+/* radio buttons for choosing eye emoji */
 .eyes {
 	width: 3em;
 	height: 3em;

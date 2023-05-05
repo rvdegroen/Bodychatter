@@ -10,9 +10,10 @@ const pos = { x: 0, y: 0 };
 const dotEyesButton = document.getElementById("dot__eyes__button");
 const stripeEyesButton = document.getElementById("stripe__eyes__button");
 const horizontalEyesButton = document.getElementById("horizontal__eyes__button");
+// to send canvas
+const sendCanvasButton = document.getElementById("send__emoji");
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
-// src: https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
 // new position from mouse or touch event
 const setPosition = (e) => {
 	const rect = canvas.getBoundingClientRect();
@@ -65,7 +66,30 @@ socket.on("message", (msg) => {
 	window.scrollTo(0, document.body.scrollHeight);
 });
 
-// EVENT LISTENERS FOR CLICKING ON RADIO BUTTON----------------------
+// WHEN STARTING UP THE APP:----------------------
+window.onload = function () {
+	// When starting up, the face with round eyes is selected
+	dotEyesButton.checked = "true";
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.beginPath();
+	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	//DOT EYES DEFAULT: left right
+	ctx.beginPath();
+	ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+};
+
+// EVENT LISTENERS----------------------
+
+// FOT CLICKING ON RADIO BUTTONS
 dotEyesButton.addEventListener("click", function () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
@@ -104,6 +128,14 @@ stripeEyesButton.addEventListener("click", function () {
 	// STRIPE EYES: left, right
 	ctx.fillRect(73, 70, 2, 30);
 	ctx.fillRect(124, 70, 2, 30);
+});
+
+// SEND CANVAS AS PNG
+sendCanvasButton.addEventListener("click", function () {
+	// convert canvas to data URL
+	const dataURL = canvas.toDataURL("image/png");
+	// send dataURL to server with socket.io
+	socket.emit("canvasImage", dataURL);
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------

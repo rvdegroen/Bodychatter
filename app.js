@@ -2,6 +2,7 @@
 const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
+const { createCanvas, loadImage } = require("canvas");
 
 // VARIABLES
 const app = express();
@@ -20,6 +21,8 @@ app.get("/", function (req, res) {
 });
 
 // SOCKET IO EVENTS
+
+// chat
 io.on("connection", (socket) => {
 	console.log("a user connected");
 	socket.on("message", (message) => {
@@ -28,6 +31,21 @@ io.on("connection", (socket) => {
 	socket.on("disconnect", () => {
 		console.log("a user disconnected");
 	});
+});
+
+// canvas to img
+io.on("canvasImage", (dataURL) => {
+	// create new img object from the dataURL
+	const img = new Image();
+	img.src = dataURL;
+
+	// create new canvas and draw the img on it
+	const canvas = createCanvas(img.width, img.height);
+	const ctx = canvas.getContext("2d");
+	ctx.drawImage(img, 0, 0);
+
+	// convert the canvas to png buffer
+	const buffer = canvas.toBuffer("image/png");
 });
 
 server.listen(port);
