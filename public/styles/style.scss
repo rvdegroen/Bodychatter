@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+#draw__emoji {
+	background-color: red;
+	width: fit-content;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.369);
+	border-radius: 1em;
+	z-index: 1;
+	padding: 1em;
+}
+
+.chatbar {
+	display: flex;
+}
+
+/* radio buttons for choosing eye emoji */
+.eyes {
+	width: 3em;
+	height: 3em;
+}
+
+.chatbar {
+	display: flex;
+	width: 100%;
+	gap: 0.5vw;
+
+	form {
+		display: flex;
+		gap: 0.5vw;
+	}
+
+	.emoji__send__button {
+		width: 4em;
+		height: 4em;
+
+		img {
+			width: 3em;
+		}
+	}
+}
