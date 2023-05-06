@@ -13,7 +13,7 @@ const horizontalEyesButton = document.querySelector('.horizontal_eyes');
 // canvas related diy emoji
 const openDiyEmoji = document.getElementById('create__emoji');
 const closeDiyEmoji = document.getElementById('cancel__emoji');
-const sendCanvasButton = document.getElementById('send__emoji');
+const sendCanvasButton = document.getElementById('emoji');
 const dialog = document.querySelector('dialog');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 
@@ -164,12 +164,18 @@ stripeEyesButton.addEventListener('click', function () {
   ctx.strokeRect(124, 70, 2, 30);
 });
 
-// SEND CANVAS AS PNG
-sendCanvasButton.addEventListener('click', function () {
-  // convert canvas to data URL
-  const dataURL = canvas.toDataURL('image/png');
-  // send dataURL to server with socket.io
-  socket.emit('canvasImage', dataURL);
+// SEND CANVAS AS PNG src: @ninadepina (ty so much <3)
+sendCanvasButton.addEventListener('submit', (e) => {
+  console.log('send canvas');
+  e.preventDefault();
+  console.log(canvas.toDataURL('image/png'));
+  socket.emit('canvasImage', canvas.toDataURL('image/png'));
+});
+socket.on('canvasImage', (dataURL) => {
+  const img = document.createElement('img');
+  img.src = dataURL;
+  messages.appendChild(img);
+  window.scrollTo(0, document.body.scrollHeight);
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
