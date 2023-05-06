@@ -1,48 +1,52 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
-	display: flex;
-	// justify-content: center;
-	align-items: flex-end;
-	height: 100vh;
-	padding: 1em;
-	position: relative;
+  display: flex;
+  // justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  padding: 1em;
+  position: relative;
 
-	#messages {
-		position: absolute;
-		bottom: 4em;
-		padding: 1em 0;
-		list-style: none;
-	}
+  #messages {
+    position: absolute;
+    bottom: 4em;
+    padding: 1em 0;
+    list-style: none;
+  }
 
-	.chatbar {
-		display: flex;
-		background-color: red;
-		gap: 5px;
-		width: 100%;
+  .chatbar {
+    display: flex;
+    background-color: red;
+    gap: 5px;
+    width: 100%;
 
-		form {
-			display: flex;
-			gap: 5px;
-			flex-grow: 1;
+    form {
+      display: flex;
+      gap: 5px;
+      flex-grow: 1;
 
-			button {
-				height: 4em;
-			}
+      button {
+        height: 4em;
+      }
 
-			input {
-				flex-grow: 1;
-				height: 4em;
-				width: 100%;
-			}
-		}
+      input {
+        flex-grow: 1;
+        height: 4em;
+        width: 100%;
+      }
+    }
 
-		img {
-			height: 3em;
-		}
-	}
+    img {
+      height: 3em;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
 }
