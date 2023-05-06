@@ -15,24 +15,24 @@
 					<input id="input" autocomplete="off" />
 					<button>Send</button>
 				</form>
-				<button class="emoji__send__button">
+				<button id="create__emoji">
 					<img src="/icons/smiley.svg" alt="create your own emoji icon" />
 				</button>
 			</div>
 		</main>
 		<!-- chat -->
 
-		<div id="draw__emoji">
+		<dialog>
 			<button id="cancel__emoji">❌</button>
 			<canvas id="canvas" width="200" height="200"></canvas>
 			<button id="send__emoji">✅</button>
-		</div>
 
-		<div class="eyesButtons">
-			<input type="radio" id="dot__eyes__button" class="eyes" name="eyes" />
-			<input type="radio" id="stripe__eyes__button" class="eyes" name="eyes" />
-			<input type="radio" id="horizontal__eyes__button" class="eyes" name="eyes" />
-		</div>
+			<div class="eyesButtons">
+				<input type="radio" id="dot__eyes__button" class="eyes" name="eyes" />
+				<input type="radio" id="stripe__eyes__button" class="eyes" name="eyes" />
+				<input type="radio" id="horizontal__eyes__button" class="eyes" name="eyes" />
+			</div>
+		</dialog>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="./scripts/main.js"></script>
