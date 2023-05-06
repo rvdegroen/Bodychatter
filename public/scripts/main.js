@@ -94,6 +94,20 @@ window.onload = function () {
 };
 
 // EVENT LISTENERS----------------------
+// SO I CAN USE ARROW LEFT RIGHT IN DIALOG FOR RADIO BUTTONS
+radioButtons.forEach((radioButton) => {
+	radioButton.addEventListener("keydown", (event) => {
+		if (
+			event.key === "ArrowUp" ||
+			event.key === "ArrowDown" ||
+			event.key === "ArrowLeft" ||
+			event.key === "ArrowRight"
+		) {
+			event.stopPropagation();
+		}
+	});
+});
+
 // FOR CLICKING ON DIY EMOJI DIALOG src: https://www.youtube.com/watch?v=ywtkJkxJsdg
 openDiyEmoji.addEventListener("click", function () {
 	dialog.show();
