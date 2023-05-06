@@ -15,7 +15,7 @@ const openDiyEmoji = document.getElementById('create__emoji');
 const closeDiyEmoji = document.getElementById('cancel__emoji');
 const sendCanvasButton = document.getElementById('send__emoji');
 const dialog = document.querySelector('dialog');
-const radioButtons = docuemnt.querySelectorAll('input[type="radio"]');
+const radioButtons = document.querySelectorAll('input[type="radio"]');
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // new position from mouse or touch event
