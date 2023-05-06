@@ -10,8 +10,11 @@ const pos = { x: 0, y: 0 };
 const dotEyesButton = document.getElementById("dot__eyes__button");
 const stripeEyesButton = document.getElementById("stripe__eyes__button");
 const horizontalEyesButton = document.getElementById("horizontal__eyes__button");
-// to send canvas
+// canvas related diy emoji
+const openDiyEmoji = document.getElementById("create__emoji");
+const closeDiyEmoji = document.getElementById("cancel__emoji");
 const sendCanvasButton = document.getElementById("send__emoji");
+const dialog = document.querySelector("dialog");
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // new position from mouse or touch event
@@ -38,7 +41,7 @@ const draw = (e) => {
 
 	ctx.beginPath(); // begin
 
-	ctx.lineWidth = 2;
+	ctx.lineWidth = 5;
 	ctx.lineCap = "round";
 	ctx.strokeStyle = "#000000";
 
@@ -74,61 +77,76 @@ window.onload = function () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
 	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.lineWidth = 5; // set line width to 5 pixels
 	ctx.stroke();
-	ctx.beginPath();
 	//DOT EYES DEFAULT: left right
 	ctx.beginPath();
-	ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+	ctx.arc(74, 86, 9, 0, 2 * Math.PI);
 	ctx.lineWidth = 1;
 	ctx.stroke();
+	ctx.fill();
 
 	ctx.beginPath();
-	ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+	ctx.arc(125, 85, 9, 0, 2 * Math.PI);
 	ctx.lineWidth = 1;
 	ctx.stroke();
+	ctx.fill();
 };
 
 // EVENT LISTENERS----------------------
+
+// FOR CLICKING ON DIY EMOJI DIALOG
+openDiyEmoji.addEventListener("click", function () {
+	dialog.showModal();
+});
+
+closeDiyEmoji.addEventListener("click", function () {
+	dialog.close();
+});
 
 // FOT CLICKING ON RADIO BUTTONS
 dotEyesButton.addEventListener("click", function () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
 	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.lineWidth = 5; // set line width to 5 pixels
 	ctx.stroke();
-	ctx.beginPath();
 	//DOT EYES DEFAULT: left right
 	ctx.beginPath();
-	ctx.arc(74, 86, 7, 0, 2 * Math.PI);
+	ctx.arc(74, 86, 9, 0, 2 * Math.PI);
 	ctx.lineWidth = 1;
 	ctx.stroke();
+	ctx.fill();
 
 	ctx.beginPath();
-	ctx.arc(125, 85, 7, 0, 2 * Math.PI);
+	ctx.arc(125, 85, 9, 0, 2 * Math.PI);
 	ctx.lineWidth = 1;
 	ctx.stroke();
+	ctx.fill();
 });
 
 horizontalEyesButton.addEventListener("click", function () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
 	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.lineWidth = 5; // set line width to 5 pixels
 	ctx.stroke();
-	ctx.beginPath();
 	// HORITZONTAL EYES: left, right
-	ctx.fillRect(62, 85, 25, 2);
-	ctx.fillRect(113, 85, 25, 2);
+	ctx.lineWidth = 5;
+	ctx.strokeRect(62, 85, 25, 2);
+	ctx.strokeRect(113, 85, 25, 2);
 });
 
 stripeEyesButton.addEventListener("click", function () {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.beginPath();
 	ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+	ctx.lineWidth = 5; // set line width to 5 pixels
 	ctx.stroke();
-	ctx.beginPath();
 	// STRIPE EYES: left, right
-	ctx.fillRect(73, 70, 2, 30);
-	ctx.fillRect(124, 70, 2, 30);
+	ctx.lineWidth = 5;
+	ctx.strokeRect(73, 70, 2, 30);
+	ctx.strokeRect(124, 70, 2, 30);
 });
 
 // SEND CANVAS AS PNG
