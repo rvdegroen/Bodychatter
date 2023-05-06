@@ -97,7 +97,7 @@ window.onload = function () {
 
 // FOR CLICKING ON DIY EMOJI DIALOG
 openDiyEmoji.addEventListener("click", function () {
-	dialog.showModal();
+	dialog.show();
 });
 
 closeDiyEmoji.addEventListener("click", function () {
