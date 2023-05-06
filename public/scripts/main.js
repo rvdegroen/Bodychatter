@@ -7,9 +7,9 @@ const ctx = canvas.getContext("2d");
 // last known position for canvas
 const pos = { x: 0, y: 0 };
 // buttons for eyes
-const dotEyesButton = document.getElementById("dot__eyes__button");
-const stripeEyesButton = document.getElementById("stripe__eyes__button");
-const horizontalEyesButton = document.getElementById("horizontal__eyes__button");
+const dotEyesButton = document.querySelector(".dot_eyes");
+const stripeEyesButton = document.querySelector(".stripe_eyes");
+const horizontalEyesButton = document.querySelector(".horizontal_eyes");
 // canvas related diy emoji
 const openDiyEmoji = document.getElementById("create__emoji");
 const closeDiyEmoji = document.getElementById("cancel__emoji");
@@ -94,12 +94,12 @@ window.onload = function () {
 };
 
 // EVENT LISTENERS----------------------
-
-// FOR CLICKING ON DIY EMOJI DIALOG
+// FOR CLICKING ON DIY EMOJI DIALOG src: https://www.youtube.com/watch?v=ywtkJkxJsdg
 openDiyEmoji.addEventListener("click", function () {
 	dialog.show();
 });
 
+// REMOVE DRAWING
 closeDiyEmoji.addEventListener("click", function () {
 	dialog.close();
 });
