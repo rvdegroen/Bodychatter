@@ -23,6 +23,12 @@ main {
     }
   }
 
+  h1 {
+    position: absolute;
+    top: 0;
+    margin: 1em 0;
+  }
+
   .chatbar {
     display: flex;
     background-color: red;
