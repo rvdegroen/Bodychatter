@@ -16,8 +16,13 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
+// ROUTES
 app.get('/', function (req, res) {
   res.render('index');
+});
+
+app.get('/chat', function (req, res) {
+  res.render('chat');
 });
 
 // SOCKET IO EVENTS
