@@ -22,7 +22,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/chat', function (req, res) {
-  res.render('chat');
+  const { username } = req.query;
+  res.render('chat', { username });
 });
 
 // SOCKET IO EVENTS
@@ -30,9 +31,16 @@ app.get('/chat', function (req, res) {
 // chat
 io.on('connection', (socket) => {
   console.log('a user connected');
+
+  socket.on('login', (username) => {
+    socket.username = username;
+    console.log('user logged in:', username);
+  });
+
   socket.on('message', (message) => {
     io.emit('message', message);
   });
+  // user disconnected
   socket.on('disconnect', () => {
     console.log('a user disconnected');
   });

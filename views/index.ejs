@@ -4,12 +4,12 @@
     <%- include('partials/head') %>
   </head>
   <body>
-    <form action="/chat">
-      <input type="text" />
+    <form id="login__form">
+      <input type="text" id="username__input" />
       <button type="submit">Start</button>
     </form>
 
-    <script src="./scripts/login.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/login.js"></script>
   </body>
 </html>
