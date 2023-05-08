@@ -32,14 +32,10 @@ app.get('/chat', function (req, res) {
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  socket.on('login', (username) => {
-    socket.username = username;
-    console.log('user logged in:', username);
-  });
-
   socket.on('message', (message) => {
     io.emit('message', message);
   });
+
   // user disconnected
   socket.on('disconnect', () => {
     console.log('a user disconnected');

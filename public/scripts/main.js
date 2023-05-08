@@ -16,6 +16,9 @@ const closeDiyEmoji = document.getElementById('cancel__emoji');
 const sendCanvasButton = document.getElementById('emoji');
 const dialog = document.querySelector('dialog');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
+// username queryparam
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get('username');
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // new position from mouse or touch event
@@ -59,15 +62,24 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (input.value) {
     // server emits the message to multiple clients
-    socket.emit('message', input.value);
+    socket.emit('message', { message: input.value, username });
     input.value = '';
   }
 });
 
+// SOCKET.IO
+
 socket.on('message', (msg) => {
   const item = document.createElement('li');
-  item.textContent = msg;
+  item.textContent = `${msg.username}: ${msg.message}`;
   messages.appendChild(item);
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
+socket.on('canvasImage', (dataURL) => {
+  const img = document.createElement('img');
+  img.src = dataURL;
+  messages.appendChild(img);
   window.scrollTo(0, document.body.scrollHeight);
 });
 
@@ -170,12 +182,6 @@ sendCanvasButton.addEventListener('submit', (e) => {
   e.preventDefault();
   console.log(canvas.toDataURL('image/png'));
   socket.emit('canvasImage', canvas.toDataURL('image/png'));
-});
-socket.on('canvasImage', (dataURL) => {
-  const img = document.createElement('img');
-  img.src = dataURL;
-  messages.appendChild(img);
-  window.scrollTo(0, document.body.scrollHeight);
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
