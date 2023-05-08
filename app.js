@@ -41,8 +41,8 @@ io.on('connection', (socket) => {
     console.log('a user disconnected');
   });
   // canvas to img
-  socket.on('canvasImage', (dataURL) => {
-    io.emit('canvasImage', dataURL);
+  socket.on('canvasImage', (imageMessage) => {
+    io.emit('canvasImage', imageMessage);
   });
 });
 

@@ -76,14 +76,33 @@ socket.on('message', (msg) => {
   window.scrollTo(0, document.body.scrollHeight);
 });
 
-socket.on('canvasImage', (dataURL) => {
+// SEND CANVAS AS PNG src: @ninadepina (ty so much <3)
+sendCanvasButton.addEventListener('submit', (e) => {
+  console.log('send canvas');
+  e.preventDefault();
+  console.log(canvas.toDataURL('image/png'));
+  socket.emit('canvasImage', {
+    // my own stuff
+    image: canvas.toDataURL('image/png'),
+    username,
+  });
+});
+
+// socket that receives the canvas image data from other users in real-time
+socket.on('canvasImage', (imageMessage) => {
+  // img element is created with a source (from the canvasImage source in app.js and line 86 in main.js)
   const img = document.createElement('img');
-  img.src = dataURL;
-  const message = `${username}: `;
-  const messageElem = document.createElement('span');
-  messageElem.textContent = message;
+  img.src = imageMessage.image;
+  // creates a textnode containing the username of the user who sent the image for within the li element
+  const message = `${imageMessage.username}: `;
+  const usernameTextNode = document.createTextNode(message);
+  // create a new li element and append the username text node to it
+  const messageElem = document.createElement('li');
+  messageElem.appendChild(usernameTextNode);
+  // append the image element to the same li element
+  messageElem.appendChild(img);
+  // append the new li element to the messages ul element
   messages.appendChild(messageElem);
-  messages.appendChild(img);
   window.scrollTo(0, document.body.scrollHeight);
 });
 
@@ -178,14 +197,6 @@ stripeEyesButton.addEventListener('click', function () {
   ctx.lineWidth = 5;
   ctx.strokeRect(73, 70, 2, 30);
   ctx.strokeRect(124, 70, 2, 30);
-});
-
-// SEND CANVAS AS PNG src: @ninadepina (ty so much <3)
-sendCanvasButton.addEventListener('submit', (e) => {
-  console.log('send canvas');
-  e.preventDefault();
-  console.log(canvas.toDataURL('image/png'));
-  socket.emit('canvasImage', canvas.toDataURL('image/png'));
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
