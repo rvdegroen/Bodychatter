@@ -79,6 +79,10 @@ socket.on('message', (msg) => {
 socket.on('canvasImage', (dataURL) => {
   const img = document.createElement('img');
   img.src = dataURL;
+  const message = `${username}: `;
+  const messageElem = document.createElement('span');
+  messageElem.textContent = message;
+  messages.appendChild(messageElem);
   messages.appendChild(img);
   window.scrollTo(0, document.body.scrollHeight);
 });
