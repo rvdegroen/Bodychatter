@@ -57,6 +57,8 @@ const draw = (e) => {
 };
 
 // TO CHAT & SOCKET.IO----------------------
+
+// send to the server and emit message object
 form.addEventListener('submit', (e) => {
   // prevents the form from refreshing the page everytime you send a message
   e.preventDefault();
@@ -67,6 +69,7 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+// received from the server: what will be done with message in the client
 socket.on('message', (msg) => {
   const item = document.createElement('li');
   item.textContent = `${msg.username}: ${msg.message}`;
@@ -74,7 +77,7 @@ socket.on('message', (msg) => {
   window.scrollTo(0, document.body.scrollHeight);
 });
 
-// SEND CANVAS AS PNG src: @ninadepina (ty so much <3)
+// send canvas as PNG to the server and emit this as object image and username
 sendCanvasButton.addEventListener('submit', (e) => {
   console.log('send canvas');
   e.preventDefault();
@@ -86,7 +89,7 @@ sendCanvasButton.addEventListener('submit', (e) => {
   });
 });
 
-// socket that receives the canvas image data from other users in real-time
+// receives object 'canvasImage', (imageMessage) from server that contains image and username and what will be done with it in the client:
 socket.on('canvasImage', (imageMessage) => {
   // img element is created with a source (from the canvasImage source in app.js and line 86 in main.js)
   const img = document.createElement('img');

@@ -32,6 +32,7 @@ app.get('/chat', function (req, res) {
 io.on('connection', (socket) => {
   console.log('a user connected');
 
+  // message is an object from main.js that contains the input.value and the username
   socket.on('message', (message) => {
     io.emit('message', message);
   });
@@ -40,7 +41,8 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('a user disconnected');
   });
-  // canvas to img
+
+  // imageMessage is an object from main.js that contains the canvas image and the username
   socket.on('canvasImage', (imageMessage) => {
     io.emit('canvasImage', imageMessage);
   });
