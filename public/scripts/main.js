@@ -56,7 +56,7 @@ const draw = (e) => {
   ctx.stroke(); // draw it!
 };
 
-// TO CHAT----------------------
+// TO CHAT & SOCKET.IO----------------------
 form.addEventListener('submit', (e) => {
   // prevents the form from refreshing the page everytime you send a message
   e.preventDefault();
@@ -66,8 +66,6 @@ form.addEventListener('submit', (e) => {
     input.value = '';
   }
 });
-
-// SOCKET.IO
 
 socket.on('message', (msg) => {
   const item = document.createElement('li');
