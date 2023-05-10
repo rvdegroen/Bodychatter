@@ -154,3 +154,47 @@ button {
     }
   }
 }
+
+dialog {
+  background-color: #393941;
+
+  div {
+    display: flex;
+    gap: 0.5em;
+
+    input[type='radio'] {
+      appearance: none;
+      // position: absolute;
+    }
+
+    input[type='radio'] + span {
+      display: block;
+      background: white;
+      border-radius: 0.1em;
+
+      transition: 0.1s ease-in-out;
+      text-align: center;
+    }
+
+    img {
+      width: 3em;
+      filter: brightness(0);
+    }
+
+    label[for='dot_eyes'] span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      transition: 0.2s ease-in-out;
+    }
+
+    label[for='dot_eyes'] img {
+      width: 1.5em;
+      height: 1.5em;
+      filter: brightness(0);
+    }
+  }
+}
