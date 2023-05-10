@@ -47,7 +47,7 @@ const draw = (e) => {
 
   ctx.lineWidth = 5;
   ctx.lineCap = 'round';
-  ctx.strokeStyle = '#000000';
+  ctx.strokeStyle = 'white';
 
   ctx.moveTo(pos.x, pos.y); // from
   setPosition(e);
@@ -115,17 +115,23 @@ window.onload = function () {
   ctx.beginPath();
   ctx.arc(100, 100, 75, 0, 2 * Math.PI);
   ctx.lineWidth = 5; // set line width to 5 pixels
+  ctx.strokeStyle = 'white'; // set stroke style to white
   ctx.stroke();
+
   //DOT EYES DEFAULT: left right
   ctx.beginPath();
   ctx.arc(74, 86, 9, 0, 2 * Math.PI);
   ctx.lineWidth = 1;
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
   ctx.stroke();
   ctx.fill();
 
   ctx.beginPath();
   ctx.arc(125, 85, 9, 0, 2 * Math.PI);
   ctx.lineWidth = 1;
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
   ctx.stroke();
   ctx.fill();
 };
@@ -147,6 +153,7 @@ radioButtons.forEach((radioButton) => {
 
 // FOR CLICKING ON DIY EMOJI DIALOG src: https://www.youtube.com/watch?v=ywtkJkxJsdg
 openDiyEmoji.addEventListener('click', function () {
+  // turn later into modal
   dialog.show();
 });
 
@@ -161,17 +168,22 @@ dotEyesButton.addEventListener('click', function () {
   ctx.beginPath();
   ctx.arc(100, 100, 75, 0, 2 * Math.PI);
   ctx.lineWidth = 5; // set line width to 5 pixels
+  ctx.strokeStyle = 'white';
   ctx.stroke();
   //DOT EYES DEFAULT: left right
   ctx.beginPath();
   ctx.arc(74, 86, 9, 0, 2 * Math.PI);
   ctx.lineWidth = 1;
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
   ctx.stroke();
   ctx.fill();
 
   ctx.beginPath();
   ctx.arc(125, 85, 9, 0, 2 * Math.PI);
   ctx.lineWidth = 1;
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
   ctx.stroke();
   ctx.fill();
 });
@@ -181,6 +193,8 @@ horizontalEyesButton.addEventListener('click', function () {
   ctx.beginPath();
   ctx.arc(100, 100, 75, 0, 2 * Math.PI);
   ctx.lineWidth = 5; // set line width to 5 pixels
+  ctx.strokeStyle = 'white';
+  ctx.fillStyle = 'white';
   ctx.stroke();
   // HORITZONTAL EYES: left, right
   ctx.lineWidth = 5;
