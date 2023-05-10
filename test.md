@@ -1,0 +1,2 @@
+- tekst miss aan kunnen passen als je een chat ding aandrukt
+- voor het aanpassen van de mood

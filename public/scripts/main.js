@@ -10,6 +10,7 @@ const pos = { x: 0, y: 0 };
 const dotEyesButton = document.querySelector('.dot_eyes');
 const stripeEyesButton = document.querySelector('.stripe_eyes');
 const horizontalEyesButton = document.querySelector('.horizontal_eyes');
+const trashButton = document.querySelector('.trash');
 // canvas related diy emoji
 const openDiyEmoji = document.getElementById('create__emoji');
 const closeDiyEmoji = document.getElementById('cancel__emoji');
@@ -163,6 +164,16 @@ closeDiyEmoji.addEventListener('click', function () {
 });
 
 // FOT CLICKING ON RADIO BUTTONS
+// FOT CLICKING ON RADIO BUTTONS
+trashButton.addEventListener('click', function () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.arc(100, 100, 75, 0, 2 * Math.PI);
+  ctx.lineWidth = 5; // set line width to 5 pixels
+  ctx.strokeStyle = 'white';
+  ctx.stroke();
+});
+
 dotEyesButton.addEventListener('click', function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();

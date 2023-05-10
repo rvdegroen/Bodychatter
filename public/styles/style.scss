@@ -8,6 +8,10 @@
   padding: 1em 1em 8em 1em !important;
 }
 
+.invert {
+  filter: invert(100%);
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #2a2a31;
@@ -157,15 +161,57 @@ button {
 
 dialog {
   background-color: #393941;
+  border: none;
+  border-radius: 0.5em;
+  padding: 2em;
+
+  #radio__parent {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+  }
+
+  #cancel__emoji {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    margin: 1em;
+    border: none;
+    transform: scale(1.5);
+  }
+
+  #send__emoji {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: none;
+    margin: 1em;
+    border: none;
+    transform: scale(1.5);
+  }
+
+  canvas {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.628);
+    border-radius: 0.5em;
+    padding-bottom: 1em;
+    width: 100%;
+  }
 
   div {
     display: flex;
     gap: 0.5em;
 
     input[type='radio'] {
-      // appearance: none;
-      // position: absolute;
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
     }
+
+    // input[type='radio'] {
+    //   // appearance: none;
+    //   // position: absolute;
+    // }
 
     input[type='radio'] + span {
       display: block;
@@ -174,6 +220,11 @@ dialog {
 
       transition: 0.1s ease-in-out;
       text-align: center;
+    }
+
+    input[type='radio'] + span > img {
+      cursor: pointer;
+      border: none;
     }
 
     img {
@@ -185,8 +236,8 @@ dialog {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2em;
-      height: 2em;
+      width: 1em;
+      height: 1em;
       border-radius: 50%;
       transition: 0.2s ease-in-out;
     }

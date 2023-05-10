@@ -28,49 +28,50 @@
       </div>
     </main>
 
-    <dialog>
-      <button id="cancel__emoji">❌</button>
-      <canvas id="canvas" width="200" height="200"></canvas>
-      <form id="emoji" action="">
-        <button id="send__emoji">✅</button>
-      </form>
+    <div>
+      <dialog>
+        <button id="cancel__emoji">❌</button>
+        <canvas id="canvas" width="200" height="200"></canvas>
+        <form id="emoji" action="">
+          <button id="send__emoji">✅</button>
+        </form>
 
-      <!-- diy emoji -->
-      <div>
-        <label for="">
-          <input
-            type="radio"
-            class="dot_eyes"
-            name="eyes"
-            value="round_eyes"
-            tabindex="0"
-          />
-          <span><img src="/icons/circle.svg" alt="circle eyes" /></span>
-        </label>
+        <!-- diy emoji -->
+        <div id="radio__parent">
+          <label for="" class="trash">
+            <input
+              type="radio"
+              name="eyes"
+              value="horizontal_eyes"
+              tabindex="0"
+            />
+            <span><img src="/icons/trash.svg" alt="trash" /></span>
+          </label>
 
-        <label for="">
-          <input
-            type="radio"
-            class="stripe_eyes"
-            name="eyes"
-            value="stripe_eyes"
-            tabindex="0"
-          />
-          <span><img src="/icons/stripe.svg" alt="vertical eyes" /></span>
-        </label>
+          <label for="" class="dot_eyes">
+            <input type="radio" name="eyes" value="round_eyes" tabindex="0" />
+            <span><img src="/icons/circle.svg" alt="circle eyes" /></span>
+          </label>
 
-        <label for="">
-          <input
-            type="radio"
-            class="horizontal_eyes"
-            name="eyes"
-            value="horizontal_eyes"
-            tabindex="0"
-          />
-          <span><img src="/icons/horizontal.svg" alt="horizontal eyes" /></span>
-        </label>
-      </div>
-    </dialog>
+          <label for="" class="stripe_eyes">
+            <input type="radio" name="eyes" value="stripe_eyes" tabindex="0" />
+            <span><img src="/icons/stripe.svg" alt="vertical eyes" /></span>
+          </label>
+
+          <label for="" class="horizontal_eyes">
+            <input
+              type="radio"
+              name="eyes"
+              value="horizontal_eyes"
+              tabindex="0"
+            />
+            <span
+              ><img src="/icons/horizontal.svg" alt="horizontal eyes"
+            /></span>
+          </label>
+        </div>
+      </dialog>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./scripts/main.js"></script>
