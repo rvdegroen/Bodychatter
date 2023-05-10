@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.adjustPadding {
+  padding: 1em 1em 8em 1em !important;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #2a2a31;
@@ -67,15 +71,16 @@ button {
   right: 0;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 2em;
+  flex-direction: column;
   width: 100vw;
   overflow: hidden;
 
   #messages {
     width: 100%;
-    padding: 6em 2em !important;
+    padding: 1em 1em 8em 1em !important;
     gap: 0.2em;
     z-index: 0;
     list-style: none;
@@ -84,6 +89,24 @@ button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  #buttons {
+    display: flex;
+    margin-top: 1em;
+    z-index: 2;
+    gap: 0.5em;
+    padding: 0 0 0.5em 0;
+
+    button {
+      width: 3em;
+      background: none;
+      border: none;
+
+      img {
+        width: 3em;
+      }
+    }
   }
 
   .chatbar {
@@ -96,24 +119,25 @@ button {
       width: 100%;
       position: relative;
 
-      .buttons {
+      button {
         display: flex;
+        align-items: center;
         gap: 1em;
         position: absolute;
         right: 0;
         top: 0;
         bottom: 0;
         margin: auto;
-        border: none;
-        background: none;
         padding: 1em;
+        background: none;
+        border: none;
       }
 
       input {
         flex-grow: 1;
         background-color: #393941;
         border: none;
-        height: 5em;
+        height: 4em;
         padding: 1em;
         border-radius: 0.4em;
         color: white;
@@ -126,22 +150,6 @@ button {
           outline: none;
           border-radius: 0.4em;
         }
-      }
-
-      #send__message {
-        background: none;
-        border: none;
-      }
-    }
-
-    #emojis,
-    #create__emoji {
-      width: 3em;
-      background: none;
-      border: none;
-
-      img {
-        width: 3em;
       }
     }
   }

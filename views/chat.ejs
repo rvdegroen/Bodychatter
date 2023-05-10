@@ -7,20 +7,23 @@
     <main id="chat__page">
       <!-- chat -->
       <ul id="messages"></ul>
+
+      <div id="buttons">
+        <button id="emojis">
+          <img src="/icons/emojis.svg" alt="all emojis icon" />
+        </button>
+        <button id="create__emoji">
+          <img src="/icons/diyemoji.svg" alt="create your own emoji icon" />
+        </button>
+      </div>
+
       <div class="chatbar">
         <form id="form" action="">
           <input id="input" autocomplete="off" />
-          <div class="buttons">
-            <button id="emojis">
-              <img src="/icons/emojis.svg" alt="all emojis icon" />
-            </button>
-            <button id="create__emoji">
-              <img src="/icons/diyemoji.svg" alt="create your own emoji icon" />
-            </button>
-            <button id="send__message">
-              <img src="/icons/send.svg" alt="send" />
-            </button>
-          </div>
+
+          <button id="send__message">
+            <img src="/icons/send.svg" alt="send" />
+          </button>
         </form>
       </div>
     </main>
