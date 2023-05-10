@@ -61,3 +61,87 @@ button {
     }
   }
 }
+
+#chat__page {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2em;
+  width: 100vw;
+
+  #messages {
+    width: 100%;
+    padding: 6em 2em !important;
+    gap: 0.2em;
+    z-index: 0;
+    list-style: none;
+    position: absolute;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chatbar {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+
+    form {
+      display: flex;
+      width: 100%;
+      position: relative;
+
+      .buttons {
+        display: flex;
+        gap: 1em;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border: none;
+        background: none;
+        padding: 1em;
+      }
+
+      input {
+        flex-grow: 1;
+        background-color: #393941;
+        border: none;
+        height: 5em;
+        padding: 1em;
+        border-radius: 0.4em;
+        color: white;
+        font-size: 1em;
+        flex-grow: 1;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid #7a7aff;
+          outline: none;
+          border-radius: 0.4em;
+        }
+      }
+
+      #send__message {
+        background: none;
+        border: none;
+      }
+    }
+
+    #emojis,
+    #create__emoji {
+      width: 3em;
+      background: none;
+      border: none;
+
+      img {
+        width: 3em;
+      }
+    }
+  }
+}
