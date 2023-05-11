@@ -31,7 +31,7 @@ button {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   gap: 2em;
 
@@ -163,7 +163,7 @@ dialog {
   background-color: #393941;
   border: none;
   border-radius: 0.5em;
-  padding: 2em;
+  padding: 4em;
 
   #radio__parent {
     display: flex;
@@ -176,9 +176,13 @@ dialog {
     right: 0;
     top: 0;
     background: none;
-    margin: 1em;
+    margin: 2em;
     border: none;
     transform: scale(1.5);
+
+    img {
+      width: 1.5em;
+    }
   }
 
   #send__emoji {
@@ -186,9 +190,13 @@ dialog {
     right: 0;
     bottom: 0;
     background: none;
-    margin: 1em;
+    margin: 1.5em;
     border: none;
     transform: scale(1.5);
+
+    img {
+      width: 1.5em;
+    }
   }
 
   div {
