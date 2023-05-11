@@ -124,6 +124,7 @@ socket.on('canvasImage', (imageMessage) => {
 
 // WHEN STARTING UP THE APP:----------------------
 window.onload = function () {
+  window.scrollTo(0, document.body.scrollHeight);
   // When starting up, the face with round eyes is selected
   dotEyesButton.checked = 'true';
   ctx.clearRect(0, 0, canvas.width, canvas.height);
