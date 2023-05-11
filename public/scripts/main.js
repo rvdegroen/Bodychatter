@@ -25,6 +25,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 // other
 const funButton = document.getElementById('fun__button');
+// canvas
+let isDrawing = false;
+let clickCount = 0;
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // new position from mouse or touch event
@@ -45,21 +48,26 @@ const setTouchPosition = (e) => {
 };
 
 const draw = (e) => {
-  // mouse left button must be pressed, otherwise you draw without holding click
-  // 1 is the primary button (left mouse btn), 2 secondary, 3 primary + secondary
-  if (e.buttons !== 1 && e.type.startsWith('mouse')) return;
+  // Detect double click
+  if (e.type.startsWith('mouse') && e.detail === 2) {
+    // Reset the click count and toggle drawing
+    clickCount = 0;
+    isDrawing = !isDrawing;
+    return;
+  }
 
-  ctx.beginPath(); // begin
+  // If not double click, check if drawing is allowed
+  if (!isDrawing) return;
 
+  // Draw the line
+  ctx.beginPath();
   ctx.lineWidth = 5;
   ctx.lineCap = 'round';
   ctx.strokeStyle = 'white';
-
-  ctx.moveTo(pos.x, pos.y); // from
+  ctx.moveTo(pos.x, pos.y);
   setPosition(e);
-  ctx.lineTo(pos.x, pos.y); // to
-
-  ctx.stroke(); // draw it!
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
 };
 
 // TO CHAT & SOCKET.IO----------------------
@@ -270,7 +278,16 @@ stripeEyesButton.addEventListener('click', function () {
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
-canvas.addEventListener('mousedown', setPosition);
+canvas.addEventListener('mousedown', (e) => {
+  // Increment the click count and toggle drawing
+  clickCount++;
+  isDrawing = !isDrawing;
+  if (clickCount > 1) {
+    clickCount = 0;
+  }
+  setPosition(e);
+});
+
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseenter', setPosition);
 canvas.addEventListener('touchstart', setTouchPosition);
