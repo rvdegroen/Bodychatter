@@ -88,6 +88,7 @@ sendCanvasButton.addEventListener('submit', (e) => {
     image: canvas.toDataURL('image/png'),
     username,
   });
+  dialog.close();
 });
 
 // receives object 'canvasImage', (imageMessage) from server that contains image and username and what will be done with it in the client:
@@ -155,12 +156,21 @@ radioButtons.forEach((radioButton) => {
 // FOR CLICKING ON DIY EMOJI DIALOG src: https://www.youtube.com/watch?v=ywtkJkxJsdg
 openDiyEmoji.addEventListener('click', function () {
   // turn later into modal
-  dialog.show();
+  dialog.showModal();
 });
 
-// REMOVE DRAWING
-closeDiyEmoji.addEventListener('click', function () {
-  dialog.close();
+// close dialog when clicking outside the box
+dialog.addEventListener('click', (e) => {
+  // src: https://blog.webdevsimplified.com/2023-04/html-dialog/
+  const dialogDimensions = dialog.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close();
+  }
 });
 
 // FOT CLICKING ON RADIO BUTTONS
