@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.adjustPadding {
+  padding: 1em 1em 8em 1em !important;
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #2a2a31;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(90%) saturate(3);
+  }
+}
+
+#overview__page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  gap: 2em;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    input {
+      padding: 0.7em;
+      text-align: center;
+      border-radius: 2em;
+      border: none;
+      font-weight: bold;
+      font-size: 1em;
+      border: 3px solid transparent;
+
+      &:focus {
+        border: 3px solid #7a7aff;
+        outline: none;
+        border-radius: 2em;
+      }
+    }
+
+    button {
+      background-color: #7a7aff;
+      color: white;
+      border: none;
+      font-size: 1em;
+      font-weight: bolder;
+      border-radius: 0.4em;
+      height: 2.5em;
+      width: 12em;
+      margin: 0 auto;
+    }
+  }
+}
+
+#chat__page {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2em;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
+
+  #messages {
+    width: 100%;
+    padding: 1em 1em 8em 1em !important;
+    gap: 0.2em;
+    z-index: 0;
+    list-style: none;
+    position: absolute;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #buttons {
+    display: flex;
+    margin-top: 1em;
+    z-index: 2;
+    gap: 0.5em;
+    padding: 0 0 0.5em 0;
+
+    button {
+      width: 3em;
+      background: none;
+      border: none;
+
+      img {
+        width: 3em;
+      }
+    }
+  }
+
+  .chatbar {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+
+    form {
+      display: flex;
+      width: 100%;
+      position: relative;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 1em;
+        background: none;
+        border: none;
+      }
+
+      input {
+        flex-grow: 1;
+        background-color: #393941;
+        border: none;
+        height: 4em;
+        padding: 1em;
+        border-radius: 0.4em;
+        color: white;
+        font-size: 1em;
+        flex-grow: 1;
+        border: 1px solid transparent;
+
+        &:focus {
+          border: 1px solid #7a7aff;
+          outline: none;
+          border-radius: 0.4em;
+        }
+      }
+    }
+  }
+}
+
+dialog {
+  background-color: #393941;
+  border: none;
+  border-radius: 0.5em;
+  padding: 2em;
+
+  #radio__parent {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+  }
+
+  #cancel__emoji {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    margin: 1em;
+    border: none;
+    transform: scale(1.5);
+  }
+
+  #send__emoji {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: none;
+    margin: 1em;
+    border: none;
+    transform: scale(1.5);
+  }
+
+  div {
+    display: flex;
+    gap: 0.5em;
+
+    input[type='radio'] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    // input[type='radio'] {
+    //   // appearance: none;
+    //   // position: absolute;
+    // }
+
+    input[type='radio'] + span {
+      display: block;
+      background: white;
+      border-radius: 0.1em;
+
+      transition: 0.1s ease-in-out;
+      text-align: center;
+    }
+
+    input[type='radio'] + span > img {
+      cursor: pointer;
+      border: none;
+    }
+
+    img {
+      width: 3em;
+      filter: brightness(0);
+    }
+
+    label[for='dot_eyes'] span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      transition: 0.2s ease-in-out;
+    }
+
+    label[for='dot_eyes'] img {
+      width: 1.5em;
+      height: 1.5em;
+      filter: brightness(0);
+    }
+  }
+}
