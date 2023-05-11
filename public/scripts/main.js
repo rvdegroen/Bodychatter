@@ -159,6 +159,10 @@ openDiyEmoji.addEventListener('click', function () {
   dialog.showModal();
 });
 
+closeDiyEmoji.addEventListener('click', function () {
+  dialog.close();
+});
+
 // close dialog when clicking outside the box
 dialog.addEventListener('click', (e) => {
   // src: https://blog.webdevsimplified.com/2023-04/html-dialog/
