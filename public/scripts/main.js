@@ -12,11 +12,14 @@ const stripeEyesButton = document.querySelector('.stripe_eyes');
 const horizontalEyesButton = document.querySelector('.horizontal_eyes');
 const trashButton = document.querySelector('.trash');
 // canvas related diy emoji
-const openDiyEmoji = document.getElementById('create__emoji');
+const menuContainer = document.getElementById('create__emoji');
 const closeDiyEmoji = document.getElementById('cancel__emoji');
 const sendCanvasButton = document.getElementById('emoji');
 const dialog = document.querySelector('dialog');
 const radioButtons = document.querySelectorAll('input[type="radio"]');
+const menuButton = document.getElementById('menu__button');
+const menuButtonImage = document.getElementById('menu__button__image');
+menuButtonImage.src = '/icons/menu.svg';
 // username queryparam
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
@@ -139,6 +142,19 @@ window.onload = function () {
 };
 
 // EVENT LISTENERS----------------------
+
+// floating action button
+menuButton.addEventListener('click', function () {
+  const menuButtonImage = document.getElementById('menu__button__image');
+  menuContainer.classList.toggle('hidden');
+
+  if (menuContainer.classList.contains('hidden')) {
+    menuButtonImage.src = '/icons/menu.svg';
+  } else {
+    menuButtonImage.src = '/icons/menuexit.svg';
+  }
+});
+
 // SO I CAN USE ARROW LEFT RIGHT IN DIALOG FOR RADIO BUTTONS
 radioButtons.forEach((radioButton) => {
   radioButton.addEventListener('keydown', (event) => {
@@ -154,7 +170,7 @@ radioButtons.forEach((radioButton) => {
 });
 
 // FOR CLICKING ON DIY EMOJI DIALOG src: https://www.youtube.com/watch?v=ywtkJkxJsdg
-openDiyEmoji.addEventListener('click', function () {
+menuContainer.addEventListener('click', function () {
   // turn later into modal
   dialog.showModal();
 });

@@ -97,15 +97,18 @@ button {
 
   #buttons {
     display: flex;
+    flex-direction: column;
     margin-top: 1em;
     z-index: 2;
-    gap: 0.5em;
+    gap: 1em;
     padding: 0 0 0.5em 0;
 
     button {
-      width: 3em;
-      background: none;
+      width: 3.5em;
+      background: #7c7aff;
+      height: 3.5em;
       border: none;
+      border-radius: 0.4em;
 
       img {
         width: 3em;
@@ -118,7 +121,7 @@ button {
     width: 100%;
     z-index: 1;
 
-    #menu {
+    #menu__button {
       background: none;
       border: none;
       margin-right: 1em;
@@ -258,4 +261,8 @@ dialog {
       filter: brightness(0);
     }
   }
+}
+
+.hidden {
+  display: none;
 }
