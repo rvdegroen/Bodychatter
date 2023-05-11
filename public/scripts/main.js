@@ -23,6 +23,8 @@ menuButtonImage.src = '/icons/menu.svg';
 // username queryparam
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
+// other
+const funButton = document.getElementById('fun__button');
 
 // FUNCTIONS TO DRAW ON THE CANVAS----------------------
 // new position from mouse or touch event
@@ -146,13 +148,21 @@ window.onload = function () {
 // floating action button
 menuButton.addEventListener('click', function () {
   const menuButtonImage = document.getElementById('menu__button__image');
+
   menuContainer.classList.toggle('hidden');
+  funButton.classList.toggle('hidden');
 
   if (menuContainer.classList.contains('hidden')) {
     menuButtonImage.src = '/icons/menu.svg';
   } else {
     menuButtonImage.src = '/icons/menuexit.svg';
   }
+});
+
+// nonsense
+funButton.addEventListener('click', function () {
+  const body = document.querySelector('body');
+  body.classList.toggle('rotate-body');
 });
 
 // SO I CAN USE ARROW LEFT RIGHT IN DIALOG FOR RADIO BUTTONS
@@ -202,6 +212,10 @@ trashButton.addEventListener('click', function () {
   ctx.lineWidth = 5; // set line width to 5 pixels
   ctx.strokeStyle = 'white';
   ctx.stroke();
+
+  if (trashButton.clicked === true) {
+    trashButton.classList.add('checked');
+  }
 });
 
 dotEyesButton.addEventListener('click', function () {
