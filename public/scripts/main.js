@@ -291,7 +291,7 @@ canvas.addEventListener('click', (e) => {
 canvas.addEventListener('touchstart', (e) => {
   // Increment the click count and toggle drawing
   clickCount++;
-  isDrawing = !isDrawing;
+  isDrawing = true;
   if (clickCount > 1) {
     clickCount = 0;
   }
