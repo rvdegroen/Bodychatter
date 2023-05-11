@@ -184,10 +184,11 @@ dialog {
   padding: 4em;
   position: fixed;
   top: 60%;
-  left: 50%;
+  left: 14%;
   transform: translate(-50%, -50%);
 
-  #dialog__text {
+  #mobile__text,
+  #desktop__text {
     text-align: center;
     font-size: 1.5em;
     color: white;
@@ -288,4 +289,93 @@ dialog {
 
 .rotate-body {
   transform: rotate(360deg);
+}
+
+#mobile__text {
+  display: none;
+}
+
+// media queries
+@media (max-width: 768px) {
+  /* Your CSS rules for mobile devices go here */
+  #desktop__text {
+    display: none;
+  }
+
+  #mobile__text {
+    display: inline;
+  }
+}
+
+@media (max-width: 1800px) {
+  dialog {
+    left: 15%;
+  }
+}
+
+@media (max-width: 1700px) {
+  dialog {
+    left: 16%;
+  }
+}
+
+@media (max-width: 1600px) {
+  dialog {
+    left: 17%;
+  }
+}
+
+@media (max-width: 1500px) {
+  dialog {
+    left: 18%;
+  }
+}
+
+@media (max-width: 1400px) {
+  dialog {
+    left: 19%;
+  }
+}
+
+@media (max-width: 1300px) {
+  dialog {
+    left: 20%;
+  }
+}
+
+@media (max-width: 1219px) {
+  dialog {
+    left: 21%;
+  }
+}
+
+@media (max-width: 1209px) {
+  dialog {
+    left: 22%;
+  }
+}
+
+@media (max-width: 1100px) {
+  dialog {
+    left: 25%;
+  }
+}
+
+@media (max-width: 1000px) {
+  dialog {
+    left: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  dialog {
+    left: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  dialog {
+    left: 50%;
+    top: 50%;
+  }
 }
