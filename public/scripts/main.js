@@ -278,7 +278,7 @@ stripeEyesButton.addEventListener('click', function () {
 });
 
 // EVENT LISTENERS FOR MOUSE AND TOUCH EVENTS----------------------
-canvas.addEventListener('mousedown', (e) => {
+canvas.addEventListener('click', (e) => {
   // Increment the click count and toggle drawing
   clickCount++;
   isDrawing = !isDrawing;
@@ -288,6 +288,17 @@ canvas.addEventListener('mousedown', (e) => {
   setPosition(e);
 });
 
+canvas.addEventListener('touchstart', (e) => {
+  // Increment the click count and toggle drawing
+  clickCount++;
+  isDrawing = !isDrawing;
+  if (clickCount > 1) {
+    clickCount = 0;
+  }
+  setTouchPosition(e);
+});
+
+canvas.addEventListener('mousedown', setPosition);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseenter', setPosition);
 canvas.addEventListener('touchstart', setTouchPosition);
