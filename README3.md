@@ -1,82 +1,38 @@
-# Table of contents
+# License
 
-- [Description ✔](#description--)
-  - [Who is Eric? ✔](#who-is-eric---)
-  - [The assignment ✔](#the-assignment--)
-- [Concept](#concept)
-  - [User scenario ✔](#user-scenario--)
-  - [Functionalities ✔](#functionalities--)
-  - [Live demo ✔](#live-demo--)
-  - [Installation ✔](#installation--)
-- [Exclusive design principles](#exclusive-design-principles)
-  - [Study situation](#study-situation)
-  - [Prioritise identity](#prioritise-identity)
-  - [Ignore conventions](#ignore-conventions)
-  - [Add nonsense](#add-nonsense)
-- [Research ✔](#research--)
-  - [Ideas ✔](#ideas--)
-- [User testing](#user-testing)
-  - [Week 1 ✔](#week-1--)
-    - [Prototype 1 ✔](#prototype-1--)
-    - [Interview analysis ✔](#interview-analysis--)
-  - [Week 3](#week-3)
-    - [Prototype 2](#prototype-2)
-    - [Interview analysis](#interview-analysis)
-- [Conclusion](#conclusion)
-- [License ✔](#license--)
+The source code is distributed under the MIT license. See LICENSE.md for more information.
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+# Table of Contents
 
-# Description ✔
+[TOC]
 
-## Who is Eric? ✔
+# App name
 
-I'm going to make this application for Eric, a designer who also happens to be my teacher. He organizes also design events for in the evening.
+[APPNAME] is a chatroom in which you can communicate with body language, specifically made for Eric.
 
-Eric is in an electric wheelchair and has a lack of fine motor skills, due to a condition, which makes it difficult for him to raise his arms and have fine movements with his fingers.
+## About Eric
 
-## The assignment ✔
+Eric is my tester. He is a designer and organizes design evening events.
 
-Eric often struggles to express himself emotionally in chats. With the overwhelming abundance of emojis available, it's challenging for him to choose the right one quickly. Furthermore, he sometimes isn't sure of a particular emoji's intended meaning, and he can't always be certain that an emoji has the same connotation for him as it does for the person on the receiving end.
+He's in an electric wheelchair and has a lack of fine motor skills.
 
-Eric wants to be able to better express himself using body language in chat rooms.
+Eric is my tester and he is the one I'll be creating this application for. Eric wants to have an application in which he can communicates with body language in a chat. He has a motoric disability. He's in a wheelchair and has difficulties raising his arms and fine movements with his fingers. It was my duty to create an app for him according to his preferences and how he controls the application.
 
-# Concept
+## Functionalities - Ignore conventions & add nonsense
 
-## User scenario ✔
+This is project's whishlist of its functionalities:
 
-A user scenario gives us the context of the user. It basically studies the situation that the user could be in. With the user scenario's you are able to identify different scenario's for the user in which they will use the app. This should give the designer information on how to design the app further. During different test sessions I have been able to identify different user scenario's for Eric:
+- [] You are able to communicate body langauge in a chat
 
-User Scenario:
+## How do you use the application?
 
-- Eric wants to be able to choose a corresponding emoji with his messages in a chatroom, so that he can find someting that will fit his message and he doesn’t needs to go through the trouble of finding a suitable one.
-- solution: while he's typing a word, a suitable emoji's will be shown.
+[APPNAME] is a chat that Eric can use and communicate body language with.
 
-- Eric wants to be able to have better control of pressing the keyboard buttons, so that he can send messages when he's on the train and his phone moves too much.
-- solution: creating bigger buttons that are easier to press, while also being able to press on every single button
+## Live Demo
 
-- Eric wants to be in control of finding the right expression in a chatroom, so that he can send an emoji's that translates the right feelings into his text messages.
-- solution: creating his own emoji's or avatars.
-- solution 2: video chatting or sending a pic of his face.
+To use the app, you can use the following demo: [LINK]
 
-- Eric wants to be control the application with keyboard only when he is using his computer, so that he doesn't needs to switch between mouse and keyboard, since it's less convenient for him.
-- Solution: make the application keyboard accesible.
-
-src: https://designmodo.com/user-stories-ux/#what-is-a-user-story
-
-## Functionalities ✔
-
-- [x] The user can customize their own smileys and send them in the chat.
-- [] The user can choose an emoji that corresponds to what they're typing.
-- [] The user is able to control the application on desktop and phone.
-- [] The user is able to control the application with only the keyboard.
-- [] The user is able to
-
-## Live demo ✔
-
-To use the app, you can use the following demo: https://body-chatter.adaptable.app/
-
-## Installation ✔
+## Installation
 
 To install the app locally on your computer, you can follow these next steps:
 
@@ -85,21 +41,15 @@ To install the app locally on your computer, you can follow these next steps:
 3. Open the terminal in your code editor.
 4. Install the dependencies by typing `npm i` in the terminal.
 5. Run the application by typing `npm run dev` in the terminal.
-6. Go to `localhost:4848` in the browser and enjoy the app!
+6. Go to `localhost:8000` in the browser and enjoy the app!
 
-# Exclusive design principles
+# Process
 
-## Study situation
+In this section I'll be talking more about my process:
 
-## Prioritise identity
+## Body Language research
 
-## Ignore conventions
-
-## Add nonsense
-
-# Research ✔
-
-Before our first session of user testing with Eric, the only information I had was that he wanted to communicate better emotionally in chat by using body language. To give myself inspiration, I looked up what different forms of communication are considered body language:
+The only information we got was that Eric wants to have a chat in which he can communicate bodylanguage. To give myself inspiration, I looked up what different forms of communication are considered body language:
 
 - Facial expressions
 - Gestures (hand or arm movements, waving or shrugging)
@@ -110,7 +60,7 @@ Before our first session of user testing with Eric, the only information I had w
 - Proximity (how close we stand can communicate intimacy, discomfort or dominance)
 - Micro-expressions (brief, fleeting expressions that reveal our true emotions, often unconsciously)
 
-## Ideas ✔
+## Ideas
 
 I had a few ideas for this project before we could speak to our tester:
 
@@ -122,15 +72,13 @@ If Eric doesn't likes it that his face is being tracked and wants to choose the 
 
 3. Whenever Eric writes in the chat, a suggestion for an emoji pops up.
 
-4. He can create his own avatars to send in the chat, although this might be too much effort for every message he would like to send.
+4. He can create his own avatars to send in the chat, athough this might be too much effort for every message he would like to send.
 
-Eventually I liked idea 2 and 3.
+### Testing - Prioritise Identity
 
-# User testing
+Who is Eric? That's what I'll talk about here.
 
-## Week 1 ✔
-
-### Prototype 1 ✔
+#### My prototype - week 1
 
 For my first prototype, I just made a Figma document, because I didn't want to spent a lot of time building something and then stressing about not able to finish it within 1 day, without knowing if that's what Eric actually wants or mean with his assigment. So I just made it look how I wanted it to look like, to communicate my idea with him and I mostly wanted to ask if my idea was alright.
 
@@ -138,7 +86,7 @@ For my first prototype, I just made a Figma document, because I didn't want to s
 
 For testing I used my first idea. I just showed Eric my idea and he said that it's nice, but since it's only design, he cannot test it. At least now I know that Eric doesn't really have something specific he's looking for, so since the idea of using "body-language" within an app is very broad, it also CAN be very broad. With this feedback, I realized I can do a lot more than I basically had in mind.
 
-### Interview analysis ✔
+#### Interview analysis - week 1
 
 For our first interview, the group gathered around Eric and we all asked him some questions. These are my findings of the interview:
 
@@ -232,14 +180,33 @@ Things I would like to keep in mind:
 - Make it so that he can switch between a normal keyboard and an old school keyboard with bigger buttons for on the train
 - I want to add in so thathe can make his own facial expression on an emoji and just adjust the curve (maybe with a horizontal scale gesture).
 
-## Week 3
+#### My prototype - week 2
 
-### Prototype 2
+#### Interview analysis - week 2
 
-### Interview analysis
+## User Scenario - Study Situation
 
-# Conclusion
+A user scenario gives us the context of the user. It basically studies the situation that the user could be in. With the user scenario's you are able to identify different scenario's for the user in which they will use the app. This should give the designer information on how to design the app further. During different test sessions I have been able to identify different user scenario's for Eric:
 
-# License ✔
+User Scenario:
 
-The source code is distributed under the MIT license. See LICENSE.md for more information.
+- Eric wants to be able to choose a corresponding emoji with his messages in a chatroom, so that he can find someting that will fit his message and he doesn’t needs to go through the trouble of finding a suitable one.
+- solution: while he's typing a word, a suitable emoji's will be shown.
+
+- Eric wants to be able to have better control of pressing the keyboard buttons, so that he can send messages when he's on the train and his phone moves too much.
+- solution: creating bigger buttons that are easier to press, while also being able to press on every single button
+
+- Eric wants to be in control of finding the right expression in a chatroom, so that he can send an emoji's that translates the right feelings into his text messages.
+- solution: creating his own emoji's or avatars.
+- solution 2: video chatting or sending a pic of his face.
+
+- Eric wants to be control the application with keyboard only when he is using his computer, so that he doesn't needs to switch between mouse and keyboard, since it's less convenient for him.
+- Solution: make the application keyboard accesible.
+
+src: https://designmodo.com/user-stories-ux/#what-is-a-user-story
+
+# Articles
+
+For this subject we needed to read a few articles. You can read my insights about these articles in this section.
+
+## Article 1
