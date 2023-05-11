@@ -93,6 +93,10 @@ button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    li {
+      font-size: 1.5em;
+    }
   }
 
   #buttons {
@@ -176,42 +180,24 @@ dialog {
   border: none;
   border-radius: 0.5em;
   padding: 4em;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  #dialog__text {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+  }
 
   #radio__parent {
     display: flex;
     justify-content: center;
     margin-top: 1em;
-  }
 
-  #cancel__emoji {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: none;
-    margin: 2em;
-    border: none;
-    transform: scale(1.5);
-
-    img {
-      width: 1.5em;
-    }
-  }
-
-  #send__emoji {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: none;
-    margin: 1.5em;
-    border: none;
-    transform: scale(1.5);
-
-    img {
-      width: 1.5em;
-    }
-  }
-
-  div {
     display: flex;
     gap: 0.5em;
 
@@ -260,6 +246,34 @@ dialog {
       height: 1.5em;
       filter: brightness(0);
     }
+  }
+}
+
+#cancel__emoji {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  margin: 2em;
+  border: none;
+  transform: scale(1.5);
+
+  img {
+    width: 1.5em;
+  }
+}
+
+#send__emoji {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: none;
+  margin: 1.5em;
+  border: none;
+  transform: scale(1.5);
+
+  img {
+    width: 1.5em;
   }
 }
 
