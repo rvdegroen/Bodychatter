@@ -1,3 +1,7 @@
+# Drawmotion | Eric's Chat
+
+![cover](/images/cover.png)
+
 # Table of contents
 
 - [Description ✔](#description--)
