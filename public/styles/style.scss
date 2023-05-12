@@ -18,6 +18,12 @@ html {
 
 h1 {
   margin: 1em;
+  text-align: center;
+
+  span {
+    display: block;
+    font-family: 'Indie Flower', cursive;
+  }
 }
 
 body {
