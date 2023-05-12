@@ -1,6 +1,6 @@
 # Drawmotion | Eric's Chat
 
-![cover](/images/cover.png)
+![cover](/images/cover2.png)
 
 # Table of contents
 
